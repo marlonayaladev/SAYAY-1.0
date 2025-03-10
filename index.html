@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PCR</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <script src="nuevo-archivo.js" defer></script>
 </head>
 <body>
     <header>
         <img src="escudo.png" alt="Escudo" class="escudo">
     </header>
-
-
 
     <div class="container">
         <div class="left">
@@ -28,45 +28,20 @@
                 <span>Comparar Con:</span>
             </div>
             <ul class="country-list">
-                <li><img src="afganistan.png" alt="Afganistán"> Afganistán</li>
-                <li><img src="albania.png" alt="Albania"> Albania</li>
-                <li><img src="alemania.png" alt="Alemania"> Alemania</li>
-                <li><img src="andorra.png" alt="Andorra"> Andorra</li>
-                <li><img src="angola.png" alt="Angola"> Angola</li>
                 <li><img src="argentina.png" alt="Argentina"> Argentina</li>
-                <li><img src="australia.png" alt="Australia"> Australia</li>
-                <li><img src="austria.png" alt="Austria"> Austria</li>
-                <li><img src="belgica.png" alt="Bélgica"> Bélgica</li>
                 <li><img src="bolivia.png" alt="Bolivia"> Bolivia</li>
                 <li><img src="brasil.png" alt="Brasil"> Brasil</li>
-                <li><img src="canada.png" alt="Canadá"> Canadá</li>
                 <li><img src="chile.png" alt="Chile"> Chile</li>
-                <li><img src="china.png" alt="China"> China</li>
                 <li><img src="colombia.png" alt="Colombia"> Colombia</li>
-                <li><img src="corea.png" alt="Corea del Sur"> Corea del Sur</li>
-                <li><img src="cuba.png" alt="Cuba"> Cuba</li>
-                <li><img src="dinamarca.png" alt="Dinamarca"> Dinamarca</li>
                 <li><img src="ecuador.png" alt="Ecuador"> Ecuador</li>
-                <li><img src="egipto.png" alt="Egipto"> Egipto</li>
-                <li><img src="españa.png" alt="España"> España</li>
-                <li><img src="estados-unidos.png" alt="Estados Unidos"> Estados Unidos</li>
-                <li><img src="francia.png" alt="Francia"> Francia</li>
-                <li><img src="grecia.png" alt="Grecia"> Grecia</li>
-                <li><img src="india.png" alt="India"> India</li>
-                <li><img src="italia.png" alt="Italia"> Italia</li>
-                <li><img src="japon.png" alt="Japón"> Japón</li>
-                <li><img src="mexico.png" alt="México"> México</li>
-                <li><img src="noruega.png" alt="Noruega"> Noruega</li>
-                <li><img src="panama.png" alt="Panamá"> Panamá</li>
                 <li><img src="paraguay.png" alt="Paraguay"> Paraguay</li>
                 <li><img src="peru.png" alt="Perú"> Perú</li>
-                <li><img src="portugal.png" alt="Portugal"> Portugal</li>
-                <li><img src="reino-unido.png" alt="Reino Unido"> Reino Unido</li>
-                <li><img src="rusia.png" alt="Rusia"> Rusia</li>
-                <li><img src="suecia.png" alt="Suecia"> Suecia</li>
-                <li><img src="suiza.png" alt="Suiza"> Suiza</li>
                 <li><img src="uruguay.png" alt="Uruguay"> Uruguay</li>
                 <li><img src="venezuela.png" alt="Venezuela"> Venezuela</li>
+                <li><img src="estados-unidos.png" alt="Estados Unidos"> Estados Unidos</li>
+                <li><img src="canada.png" alt="Canadá"> Canadá</li>
+                <li><img src="mexico.png" alt="México"> México</li>
+                <li><img src="japon.png" alt="Japón"> Japón</li>
             </ul>
         </div>
     </div>
@@ -74,40 +49,5 @@
     <footer>
         <img src="check.png" alt="Check" class="check" id="checkButton">
     </footer>
-
-    <script>
-        document.querySelectorAll('.country-list li').forEach(item => {
-            item.addEventListener('click', () => {
-                document.querySelectorAll('.country-list li').forEach(li => li.classList.remove('selected'));
-                item.classList.add('selected');
-            });
-        });
-
-        document.getElementById('checkButton').addEventListener('click', () => {
-            const selectedCountry = document.querySelector('.country-list li.selected');
-            if (selectedCountry) {
-                localStorage.setItem('selectedCountry', selectedCountry.innerText.trim());
-                document.body.innerHTML = `
-                    <header>
-                        <img src="escudo.png" alt="Escudo" class="escudo">
-                    </header>
-                    <h1>Página 2</h1>
-                `;
-            } else {
-                alert('Por favor, seleccione un país.');
-            }
-        });
-
-        window.addEventListener('load', () => {
-            const selectedCountry = localStorage.getItem('selectedCountry');
-            if (selectedCountry) {
-                document.querySelectorAll('.country-list li').forEach(item => {
-                    if (item.innerText.trim() === selectedCountry) {
-                        item.classList.add('selected');
-                    }
-                });
-            }
-        });
-    </script>
 </body>
 </html>

@@ -11,7 +11,7 @@ header {
 }
 
 .escudo {
-    width: 50px;
+    width: 65px;
 }
 
 .container {
@@ -28,10 +28,10 @@ header {
 .title {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Changed from center to flex-start */
+    justify-content: center;
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .title img {
@@ -40,6 +40,18 @@ header {
 }
 
 .bandera {
+    width: 150px;
+    border-radius: 10px;
+}
+
+.flags {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.flags .bandera {
     width: 200px;
     border-radius: 10px;
 }
@@ -47,8 +59,8 @@ header {
 .country-list {
     list-style: none;
     padding: 0;
-    width: 200px;
-    max-height: 200px;
+    width: 300px; /* Changed from 200px to 300px */
+    max-height: 400px; /* Changed from 200px to 400px */
     overflow-y: auto;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -63,7 +75,7 @@ header {
 }
 
 .country-list li.selected {
-    background-color: #f0f0f0;
+    background-color: #818080;
 }
 
 .country-list li:last-child {
@@ -82,3 +94,119 @@ footer {
 .check {
     width: 40px;
 }
+
+.back-button {
+    position: absolute;
+    top: 20px; /* Adjusted top position to move button lower */
+    left: 10px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.content {
+    text-align: center;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.icono-planeamiento {
+    display: block;
+    margin: 0 auto 20px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Mantiene la alineación a la izquierda */
+    justify-content: center;
+    margin-top: 30px; /* Ajusta la distancia según necesites */
+    margin-left: -235px; /* Ajusta este valor para moverlo más a la izquierda */
+}
+
+form input[type="radio"] {
+    margin-right: 10px
+}
+
+hr {
+    width: 300%;
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0; /* Increased space between options */
+}
+
+.options p {
+    font-size: 15px;
+    margin: 30px 0;
+    margin-top: -70px; /* Ajusta este valor para subir más el texto */
+}
+
+.options hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+    margin-top: -15px; /* Ajusta este valor para subir más la línea */
+}
+
+.arrow-icon {
+    width: 30px;
+    margin-left: 30px; /* Increased margin to move arrow further right */
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.option-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 50px; /* Added padding to move options further right */
+}
+
+.short-hr {
+    width: 100%; /* Adjusted width to make the line shorter */
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+.left-flag {
+    position: absolute;
+    top: 200px; /* Adjust as needed */
+    left: 90px; /* Adjust as needed */
+}
+
+.right-flag {
+    position: absolute;
+    top: 200px; /* Adjust as needed */
+    right: 90px; /* Adjust as needed */
+}
+
+.strategic-table {
+    width: 50%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.strategic-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    cursor: pointer;
+}
+
+.strategic-table tr:hover {
+    background-color: #f83535;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
