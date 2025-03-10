@@ -88,7 +88,7 @@ function showStrategicTable() {
         </header>
         <div class="content" style="text-align: center; margin-top: 20px;">
             <table class="strategic-table">
-                <tr><td onclick="showLiderazgoEstatal()">Liderazgo Estatal</td></tr>
+                <tr><td onclick="showLiderazgoEstatal()">Liderazgo Nacional</td></tr>
                 <tr><td>Sociedad</td></tr>
                 <tr><td>Económica</td></tr>
                 <tr><td>Politica</td></tr>
@@ -122,8 +122,8 @@ function showLiderazgoEstatal() {
             <img src="retroceder.png" alt="Back" class="back-button" style="margin-top: 10px;" onclick="showStrategicTable()">
         </header>
         <div class="content" style="text-align: center; margin-top: 20px;">
-            <h2>Liderazgo Estatal</h2>
-            <p>Contenido sobre Liderazgo Estatal...</p>
+            <h2>¿Cuál es el porcentaje de aprobación del presidente?</h2>
+            <p>Liderazgo Nacional</p>
             <div class="flags">
                 <div>
                     <img src="peru.png" alt="Perú" class="bandera">
