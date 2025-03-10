@@ -62,6 +62,10 @@ header {
     cursor: pointer;
 }
 
+.country-list li.selected {
+    background-color: #f0f0f0;
+}
+
 .country-list li:last-child {
     border-bottom: none;
 }
