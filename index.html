@@ -3,51 +3,1312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PCR</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
-    <script src="nuevo-archivo.js" defer></script>
+    <title>Comparar Fuerza Combativa</title>
+    <script src="script.js" defer></script>
+    <script src="header.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <header>
-        <img src="escudo.png" alt="Escudo" class="escudo">
-    </header>
+    <div id="inicio">
+        <h1>Comparar Fuerza Combativa</h1>
+    
+        <label for="paisSeleccionado">Selecciona un país para comparar con Perú:</label>
+        <select id="paisSeleccionado">
+            <option value="" disabled selected>Elige un país</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Brasil">Brasil</option>
+            <option value="Chile">Chile</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="Paraguay">Paraguay</option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Venezuela">Venezuela</option>
+            <option value="Estados Unidos">Estados Unidos</option>
+            <option value="Canadá">Canadá</option>
+            <option value="Japón">Japón</option>
+        </select>
+    </div>
 
-    <div class="container">
-        <div class="left">
-            <div class="title">
-                <img src="icono-mundo.png" alt="Mundo">
-                <span>País</span>
+
+    <div id="planeamiento" style="display: none;">
+        <h2>Indique el nivel de planeamiento:</h2>
+    
+        <div class="planeamiento-container">
+            <button class="btn-planeamiento" data-value="estrategico">Estratégico</button>
+            <button class="btn-planeamiento" data-value="operacional">Operacional</button>
+            <button class="btn-planeamiento" data-value="tactico">Táctico</button>
+        </div>
+    
+        <br>
+        <button id="checkButton">✔️ Calcular PCR</button>
+    </div>
+    
+    <div id="estrategicoSection" style="display: none;">
+        <h2>Sección Estratégico</h2>
+    
+        <div class="contenedor-tablas">
+            <!-- Tabla de Categorías -->
+            <table class="tabla-opciones" border="1">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-value="liderazgo"><td>Liderazgo Nacional</td></tr>
+                    <tr data-value="sociedad"><td>Sociedad</td></tr>
+                    <tr data-value="control"><td>Control Interno</td></tr>
+                    <tr data-value="economica"><td>Económica</td></tr>
+                    <tr data-value="politica"><td>Política</td></tr>
+                    <tr data-value="infraestructura"><td>Infraestructura</td></tr>
+                    <tr data-value="terrorismo"><td>Terrorismo Guerrillas</td></tr>
+                    <tr data-value="amenazas"><td>Otras Amenazas</td></tr>
+                </tbody>
+            </table>
+    
+            <!-- Nueva Tabla a la Derecha -->
+            <table class="tabla-derecha" border="1">
+                <thead>
+                    <tr>
+                        <th>Nivel de Poder</th>
+                        <th>Coeficiente</th>
+                        <th>Resultado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="nivelPoderTabla"></td>
+                        <td id="coeficienteTabla"></td>
+                        <td id="resultadoTabla"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Resultado Total -->
+            <div id="resultadoTotalContainer">
+                <h3>Resultado Total: <span id="resultadoTotal"></span></h3>
             </div>
-            <img src="peru.png" alt="perú" class="bandera">
+        </div>
+    
+        <br>
+        <button id="volverPlaneamiento">⬅ Volver</button>
+    </div>
+
+    <div id="operacionalSection" style="display: none;">
+        <h2>Sección Operacional</h2>
+
+        <div class="contenedor-opciones">
+            <button class="btn-operacional" data-value="fuerzaAerea">Fuerza Aérea</button>
+            <button class="btn-operacional" data-value="fuerzaNaval">Fuerza Naval</button>
+            <button class="btn-operacional" data-value="fuerzaMilitar">Fuerza Militar</button>
         </div>
 
-        <div class="right">
-            <div class="title">
-                <img src="icono-mundo.png" alt="Mundo">
-                <span>Comparar Con:</span>
+        <br>
+        <button id="volverPlaneamientoOperacional">⬅ Volver</button>
+    </div>
+    
+    <div id="fuerzaAereaSection" style="display: none;">
+        <h2>SECCION I: COMPOSICION DE LA FUERZA</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>FACTOR</th>
+                    <th>PERU</th>
+                    <th>TOTAL</th>
+                    <th>VERDE</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0.10</td>
+                    <td><input type="number" class="input-peru" data-factor="0.10"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="0.10"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>0.10</td>
+                    <td><input type="number" class="input-peru" data-factor="0.10"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="0.10"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>0.08</td>
+                    <td><input type="number" class="input-peru" data-factor="0.08"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="0.08"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>0.07</td>
+                    <td><input type="number" class="input-peru" data-factor="0.07"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="0.07"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>0.06</td>
+                    <td><input type="number" class="input-peru" data-factor="0.06"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="0.06"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>0.04</td>
+                    <td><input type="number" class="input-peru" data-factor="0.04"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="0.04"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>0.03</td>
+                    <td><input type="number" class="input-peru" data-factor="0.03"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="0.03"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>0.07</td>
+                    <td><input type="number" class="input-peru" data-factor="0.07"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="0.07"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>0.07</td>
+                    <td><input type="number" class="input-peru" data-factor="0.07"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="0.07"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>0.08</td>
+                    <td><input type="number" class="input-peru" data-factor="0.08"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="0.08"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>0.08</td>
+                    <td><input type="number" class="input-peru" data-factor="0.08"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="0.08"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>0.05</td>
+                    <td><input type="number" class="input-peru" data-factor="0.05"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="0.05"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Suma Total PERU</td>
+                    <td id="sumaTotalPeru">0</td>
+                    <td colspan="2">Suma Total VERDE</td>
+                    <td id="sumaTotalVerde">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <button id="volverOperacional">⬅ Volver</button>
+        <button id="siguienteTablaFuerzaAerea">Siguiente ➡</button>
+    </div>
+
+    <div id="fuerzaAereaSection2" style="display: none;">
+        <h2>SECCION II: OTRA TABLA</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>AERONAVES DE COMBATE</th>
+                    <th>FACTOR</th>
+                    <th>PERU</th>
+                    <th>TOTAL</th>
+                    <th>VERDE</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Aviones de Caza/Multirol</td>
+                    <td>7</td>
+                    <td><input type="number" class="input-peru" data-factor="7"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="7"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Aviones de Apoyo FFSS</td>
+                    <td>4</td>
+                    <td><input type="number" class="input-peru" data-factor="4"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="4"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Aviones Bombarderos</td>
+                    <td>0</td>
+                    <td><input type="number" class="input-peru" data-factor="0"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="0"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Helicópteros de Combate</td>
+                    <td>3</td>
+                    <td><input type="number" class="input-peru" data-factor="3"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="3"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Suma Total PERU</td>
+                    <td id="sumaTotalPeru2">0</td>
+                    <td colspan="2">Suma Total VERDE</td>
+                    <td id="sumaTotalVerde2">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>AERONAVES DE TRANSPORTES</th>
+                    <th>FACTOR</th>
+                    <th>PERU</th>
+                    <th>TOTAL</th>
+                    <th>VERDE</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Aviones Pesados (> 250 PAX)</td>
+                    <td>5</td>
+                    <td><input type="number" class="input-peru" data-factor="5"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="5"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Aviones Pesados (> 100 PAX)</td>
+                    <td>4</td>
+                    <td><input type="number" class="input-peru" data-factor="4"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="4"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Aviones semipesados (de 30 a 100 PAX)</td>
+                    <td>3</td>
+                    <td><input type="number" class="input-peru" data-factor="3"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="3"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Aviones Livianos (< 30 PAX)</td>
+                    <td>2</td>
+                    <td><input type="number" class="input-peru" data-factor="2"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="2"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Aviones Tanqueros</td>
+                    <td>6</td>
+                    <td><input type="number" class="input-peru" data-factor="6"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="6"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Suma Total PERU</td>
+                    <td id="sumaTotalPeru3">0</td>
+                    <td colspan="2">Suma Total VERDE</td>
+                    <td id="sumaTotalVerde3">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>AERONAVES DE RECONOCIMIENTO</th>
+                    <th>FACTOR</th>
+                    <th>PERU</th>
+                    <th>TOTAL</th>
+                    <th>VERDE</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Aviones de Rec. Electrónico (MAGE)</td>
+                    <td>3</td>
+                    <td><input type="number" class="input-peru" data-factor="3"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="3"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Aviones de Rec. Aerofotográfico</td>
+                    <td>2</td>
+                    <td><input type="number" class="input-peru" data-factor="2"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="2"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Suma Total PERU</td>
+                    <td id="sumaTotalPeru4">0</td>
+                    <td colspan="2">Suma Total VERDE</td>
+                    <td id="sumaTotalVerde4">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>HELICOPTEROS</th>
+                    <th>FACTOR</th>
+                    <th>PERU</th>
+                    <th>TOTAL</th>
+                    <th>VERDE</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pesados Multimotor</td>
+                    <td>3</td>
+                    <td><input type="number" class="input-peru" data-factor="3"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="3"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Semipesados Multimotor</td>
+                    <td>2</td>
+                    <td><input type="number" class="input-peru" data-factor="2"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="2"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Semipesados Monomotor</td>
+                    <td>2</td>
+                    <td><input type="number" class="input-peru" data-factor="2"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="2"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Livianos</td>
+                    <td>1</td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="1"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Suma Total PERU</td>
+                    <td id="sumaTotalPeru5">0</td>
+                    <td colspan="2">Suma Total VERDE</td>
+                    <td id="sumaTotalVerde5">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>AERONAVES DE INSTRUCCIÓN</th>
+                    <th>FACTOR</th>
+                    <th>PERU</th>
+                    <th>TOTAL</th>
+                    <th>VERDE</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Avanzada</td>
+                    <td>4</td>
+                    <td><input type="number" class="input-peru" data-factor="4"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="4"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Básica</td>
+                    <td>2</td>
+                    <td><input type="number" class="input-peru" data-factor="2"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="2"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Básica/avanzada</td>
+                    <td>3</td>
+                    <td><input type="number" class="input-peru" data-factor="3"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="3"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Primaria</td>
+                    <td>1</td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="1"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Primaria/avanzada</td>
+                    <td>2</td>
+                    <td><input type="number" class="input-peru" data-factor="2"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="2"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Suma Total PERU</td>
+                    <td id="sumaTotalPeru6">0</td>
+                    <td colspan="2">Suma Total VERDE</td>
+                    <td id="sumaTotalVerde6">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>AERONAVES DE RESERVA</th>
+                    <th>FACTOR</th>
+                    <th>PERU</th>
+                    <th>TOTAL</th>
+                    <th>VERDE</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Comerciales Multimotor</td>
+                    <td>4</td>
+                    <td><input type="number" class="input-peru" data-factor="4"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="4"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Comerciales Bimotor</td>
+                    <td>4</td>
+                    <td><input type="number" class="input-peru" data-factor="4"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="4"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Privados / Particulares Bimotor</td>
+                    <td>3</td>
+                    <td><input type="number" class="input-peru" data-factor="3"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="3"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Privados / Particulares Monomotor</td>
+                    <td>2</td>
+                    <td><input type="number" class="input-peru" data-factor="2"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="2"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Aeroclubes</td>
+                    <td>1</td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="1"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Helicópteros</td>
+                    <td>2</td>
+                    <td><input type="number" class="input-peru" data-factor="2"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="2"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Suma Total PERU</td>
+                    <td id="sumaTotalPeruReserva">0</td>
+                    <td colspan="2">Suma Total VERDE</td>
+                    <td id="sumaTotalVerdeReserva">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <button id="volverFuerzaAerea">⬅ Volver</button>
+    </div>
+    
+    <div id="fuerzaNavalSection" style="display: none;">
+        <h2>SECCION I: COMPOSICION DE LA FUERZA NAVAL</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>FACTOR</th>
+                    <th>PERU</th>
+                    <th>TOTAL</th>
+                    <th>VERDE</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Superficie - Fragatas</td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="1"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Superficie - Corbetas</td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="1"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Superficie - Multipropósito</td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="1"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Submarino</td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="1"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td>Aeronave</td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                    <td class="total-peru">0</td>
+                    <td><input type="number" class="input-verde" data-factor="1"></td>
+                    <td class="total-verde">0</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Suma Total PERU</td>
+                    <td id="sumaTotalPeruNaval">0</td>
+                    <td colspan="2">Suma Total VERDE</td>
+                    <td id="sumaTotalVerdeNaval">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <h2>SECCION II: ALCANCE MAXIMO DE SUS SISTEMAS</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>FRAGATAS</th>
+                    <th>CORBETAS</th>
+                    <th>MULTI</th>
+                    <th>SUBMARINO</th>
+                    <th>AERONAVES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Misiles</td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                    <td><input type="number" class="input-verde" data-factor="1"></td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                    <td><input type="number" class="input-verde" data-factor="1"></td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                </tr>
+                <tr>
+                    <td>Torpedos</td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                    <td><input type="number" class="input-verde" data-factor="1"></td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                    <td><input type="number" class="input-verde" data-factor="1"></td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                </tr>
+                <tr>
+                    <td>Artillería</td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                    <td><input type="number" class="input-verde" data-factor="1"></td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                    <td><input type="number" class="input-verde" data-factor="1"></td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                </tr>
+                <tr>
+                    <td>Radar</td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                    <td><input type="number" class="input-verde" data-factor="1"></td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                    <td><input type="number" class="input-verde" data-factor="1"></td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                </tr>
+                <tr>
+                    <td>Sonar</td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                    <td><input type="number" class="input-verde" data-factor="1"></td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                    <td><input type="number" class="input-verde" data-factor="1"></td>
+                    <td><input type="number" class="input-peru" data-factor="1"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <button id="volverOperacionalNaval">⬅ Volver</button>
+    </div>
+
+    <!-- Modal for Liderazgo Nacional -->
+    <div id="modalLiderazgo" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModalLiderazgo()">&times;</span>
+            <h2>Liderazgo Nacional</h2>
+
+            <div class="container">
+                <div>
+                    <button onclick="mostrarNivelPoder()">Nivel de Poder</button>
+                    <div class="resultado">Resultado: <span id="resultadoPoder"></span></div>
+                </div>
+                <div>
+                    <button onclick="mostrarCoeficienteMultiplicador()">Coeficiente Multiplicador</button>
+                    <div class="resultado">Resultado: <span id="resultadoCoef"></span></div>
+                </div>
             </div>
-            <ul class="country-list">
-                <li><img src="argentina.png" alt="Argentina"> Argentina</li>
-                <li><img src="bolivia.png" alt="Bolivia"> Bolivia</li>
-                <li><img src="brasil.png" alt="Brasil"> Brasil</li>
-                <li><img src="chile.png" alt="Chile"> Chile</li>
-                <li><img src="colombia.png" alt="Colombia"> Colombia</li>
-                <li><img src="ecuador.png" alt="Ecuador"> Ecuador</li>
-                <li><img src="paraguay.png" alt="Paraguay"> Paraguay</li>
-                <li><img src="peru.png" alt="Perú"> Perú</li>
-                <li><img src="uruguay.png" alt="Uruguay"> Uruguay</li>
-                <li><img src="venezuela.png" alt="Venezuela"> Venezuela</li>
-                <li><img src="estados-unidos.png" alt="Estados Unidos"> Estados Unidos</li>
-                <li><img src="canada.png" alt="Canadá"> Canadá</li>
-                <li><img src="mexico.png" alt="México"> México</li>
-                <li><img src="japon.png" alt="Japón"> Japón</li>
-            </ul>
+
+            <div id="nivelPoderSection" style="display: none;">
+                <h3>Nivel de Poder</h3>
+                <div class="input-container">
+                    <label for="nivelAprobacion">Nivel de aprobación percepción nacional:</label>
+                    <input type="number" id="nivelAprobacion" min="1" max="100" oninput="calcularPorcentaje()">
+                    <br>
+                    <span id="porcentajeAprobacion">0%</span>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="nivelAprobacionInternacional">Nivel de aprobación percepción internacional:</label>
+                    <input type="number" id="nivelAprobacionInternacional" min="1" max="100" oninput="calcularPorcentaje()">
+                    <br>
+                    <span id="porcentajeAprobacionInternacional">0%</span>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="relacionFFAA">Relación FFAA-Ejecutivo:</label>
+                    <select id="relacionFFAA" onchange="calcularPorcentaje()">
+                        <option value="100">Es su jefe supremo</option>
+                        <option value="50">Son independientes</option>
+                        <option value="0">Son opuestos</option>
+                    </select>
+                    <br>
+                    <span id="porcentajeFFAA">100%</span>
+                    <hr>
+                </div>
+            </div>
+
+            <div id="coeficienteMultiplicadorSection" style="display: none;">
+                <h3>Coeficiente Multiplicador</h3>
+                <div class="input-container">
+                    <label for="historialConflicto">Histórico de relación con el conflicto:</label>
+                    <select id="historialConflicto" onchange="calcularCoeficiente()">
+                        <option value="100">El conflicto lo potencia 100%</option>
+                        <option value="62.50">Indeterminado 62.50%</option>
+                        <option value="25">El conflicto lo interrumpe 25%</option>
+                    </select>
+                    <br>
+                    <span id="porcentajeConflicto">100%</span>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="relacionFFAACoef">Relación FFAA-Ejecutivo:</label>
+                    <select id="relacionFFAACoef" onchange="calcularCoeficiente()">
+                        <option value="100">Es su jefe supremo</option>
+                        <option value="50">Son independientes</option>
+                        <option value="0">Son opuestos</option>
+                    </select>
+                    <br>
+                    <span id="porcentajeFFAACoef">100%</span>
+                    <hr>
+                </div>
+                <div class="resultado">Resultado: <span id="resultadoCoeficiente">0%</span></div>
+            </div>
+
+            <button onclick="guardarValores()">Guardar</button>
         </div>
     </div>
 
-    <footer>
-        <img src="check.png" alt="Check" class="check" id="checkButton">
-    </footer>
+    <!-- Modal for Sociedad -->
+    <div id="modalSociedad" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModalSociedad()">&times;</span>
+            <h2>Sociedad</h2>
+
+            <div class="container">
+                <div>
+                    <button onclick="mostrarNivelPoderSociedad()">Nivel de Poder</button>
+                    <div class="resultado">Resultado: <span id="resultadoSociedad"></span></div>
+                </div>
+                <div>
+                    <button onclick="mostrarCoeficienteMultiplicadorSociedad()">Coeficiente Multiplicador</button>
+                    <div class="resultado">Resultado: <span id="resultadoCoeficienteSociedad"></span></div>
+                </div>
+            </div>
+
+            <div id="nivelPoderSociedadSection" style="display: none;">
+                <h3>Nivel de Poder</h3>
+                <h4>Sociedad visión internacional</h4>
+                <div class="input-container">
+                    <label for="coeficienteGINI">Coeficiente de GINI de la sociedad visión internacional:</label>
+                    <input type="number" id="coeficienteGINI" min="1" max="100" oninput="calcularPorcentajeSociedad()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="indiceDesarrolloHumano">Índice de desarrollo humano:</label>
+                    <input type="number" id="indiceDesarrolloHumano" min="1" max="100" oninput="calcularPorcentajeSociedad()">
+                    <br>
+                    <hr>
+                </div>
+                <h4>Sociedad visión nacional</h4>
+                <div class="input-container">
+                    <label for="necesidadesBasicas">Necesidades básicas humanas:</label>
+                    <input type="number" id="necesidadesBasicas" min="1" max="100" oninput="calcularPorcentajeSociedad()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="fundamentosBienestar">Fundamentos de bienestar:</label>
+                    <input type="number" id="fundamentosBienestar" min="1" max="100" oninput="calcularPorcentajeSociedad()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="oportunidades">Oportunidades:</label>
+                    <input type="number" id="oportunidades" min="1" max="100" oninput="calcularPorcentajeSociedad()">
+                    <br>
+                    <hr>
+                </div>
+            </div>
+
+            <div id="coeficienteMultiplicadorSociedadSection" style="display: none;">
+                <h3>Coeficiente Multiplicador</h3>
+                <div class="input-container">
+                    <label for="historicoSociedad">Histórico de Sociedad en el conflicto:</label>
+                    <select id="historicoSociedad" onchange="calcularCoeficienteSociedad()">
+                        <option value="100">El conflicto lo aumenta 100%</option>
+                        <option value="62.50">El conflicto puede aumentarlo 62.50%</option>
+                        <option value="25">El conflicto no lo aumenta 25%</option>
+                    </select>
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="historicoPoderSociedad">Histórico de poder de la sociedad en el conflicto:</label>
+                    <select id="historicoPoderSociedad" onchange="calcularCoeficienteSociedad()">
+                        <option value="100">Puede aumentar el conflicto 100%</option>
+                        <option value="62.50">Difícilmente podrá aumentar el conflicto 62.50%</option>
+                        <option value="25">No aumentará el conflicto 25%</option>
+                    </select>
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="doctrinaConflicto">Doctrina aplicada al conflicto:</label>
+                    <select id="doctrinaConflicto" onchange="calcularCoeficienteSociedad()">
+                        <option value="100">No existe doctrina 100%</option>
+                        <option value="62.50">Doctrina está en desarrollo 62.50%</option>
+                        <option value="25">Existe doctrina 25%</option>
+                    </select>
+                    <br>
+                    <hr>
+                </div>
+            </div>
+
+            <button onclick="guardarValoresSociedad()">Guardar</button>
+        </div>
+    </div>
+
+    <!-- Modal for Control Interno -->
+    <div id="modalControlInterno" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModalControlInterno()">&times;</span>
+            <h2>Control Interno</h2>
+
+            <div class="container">
+                <div>
+                    <button onclick="mostrarNivelPoderControlInterno()">Nivel de Poder</button>
+                    <div class="resultado">Resultado: <span id="resultadoControlInterno"></span></div>
+                </div>
+                <div>
+                    <button onclick="mostrarCoeficienteMultiplicadorControlInterno()">Coeficiente Multiplicador</button>
+                    <div class="resultado">Resultado: <span id="resultadoCoeficienteControlInterno"></span></div>
+                </div>
+            </div>
+
+            <div id="nivelPoderControlInternoSection" style="display: none;">
+                <h3>Nivel de Poder</h3>
+                <div class="input-container">
+                    <label for="talaIlegal">Tala ilegal y otras amenazas del medio ambiente:</label>
+                    <select id="talaIlegal" onchange="calcularPorcentajeControlInterno()">
+                        <option value="100">Las FFAA no se encuentran enfrentándo esta amenaza</option>
+                        <option value="66">Las FFAA las enfrentarán esta amenaza</option>
+                        <option value="33">Las FFAA se encuentran enfrentándo esta amenaza</option>
+                    </select>
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="tid">TID y otras amenazas a las estructuras sociales:</label>
+                    <select id="tid" onchange="calcularPorcentajeControlInterno()">
+                        <option value="100">Las FFAA no se encuentran enfrentándo esta amenaza</option>
+                        <option value="66">Las FFAA las enfrentarán esta amenaza</option>
+                        <option value="33">Las FFAA se encuentran enfrentándo esta amenaza</option>
+                    </select>
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="crimenOrganizado">Crimen organizado:</label>
+                    <select id="crimenOrganizado" onchange="calcularPorcentajeControlInterno()">
+                        <option value="100">Las FFAA no se encuentran enfrentándo esta amenaza</option>
+                        <option value="66">Las FFAA las enfrentarán esta amenaza</option>
+                        <option value="33">Las FFAA se encuentran enfrentándo esta amenaza</option>
+                    </select>
+                    <br>
+                    <hr>
+                </div>
+            </div>
+
+            <div id="coeficienteMultiplicadorControlInternoSection" style="display: none;">
+                <h3>Coeficiente Multiplicador</h3>
+                <div class="input-container">
+                    <label for="historicoSimultaneidad">Histórico de simultaneidad con el conflicto:</label>
+                    <select id="historicoSimultaneidad" onchange="calcularCoeficienteControlInterno()">
+                        <option value="100">El conflicto lo potencia 100%</option>
+                        <option value="62.50">Indeterminado 62.50%</option>
+                        <option value="25">El conflicto lo interrumpe 25%</option>
+                    </select>
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="historicoPoderConflicto">Histórico de poder sobre el conflicto:</label>
+                    <select id="historicoPoderConflicto" onchange="calcularCoeficienteControlInterno()">
+                        <option value="100">Puede influir en las capacidades 100%</option>
+                        <option value="62.50">Difícilmente podrá influir en las capacidades 62.50%</option>
+                        <option value="25">No influirá en las capacidades 25%</option>
+                    </select>
+                    <br>
+                    <hr>
+                </div>
+            </div>
+
+            <button onclick="guardarValoresControlInterno()">Guardar</button>
+        </div>
+    </div>
+
+    <!-- Modal for Económica -->
+    <div id="modalEconomica" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModalEconomica()">&times;</span>
+            <h2>Económica</h2>
+
+            <div class="container">
+                <div>
+                    <button onclick="mostrarNivelPoderEconomica()">Nivel de Poder</button>
+                    <div class="resultado">Resultado: <span id="resultadoEconomica"></span></div>
+                </div>
+                <div>
+                    <button onclick="mostrarCoeficienteMultiplicadorEconomica()">Coeficiente Multiplicador</button>
+                    <div class="resultado">Resultado: <span id="resultadoCoeficienteEconomica"></span></div>
+                </div>
+            </div>
+
+            <div id="nivelPoderEconomicaSection" style="display: none;">
+                <h3>Nivel de Poder</h3>
+                <h4>Producto Bruto Interno (PBI)</h4>
+                <div class="input-container">
+                    <label for="pbiCantidadActual">Cantidad actual (AUMENTO):</label>
+                    <input type="number" id="pbiCantidadActual" min="1" max="100" oninput="calcularPorcentajeEconomica()">
+                    <br>
+                    <hr>
+                </div>
+                <h4>Economía Regional</h4>
+                <div class="input-container">
+                    <label for="inflacionTipoCambio">Inflación y tipo de cambio:</label>
+                    <input type="number" id="inflacionTipoCambio" min="1" max="100" oninput="calcularPorcentajeEconomica()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="produccion">Producción:</label>
+                    <input type="number" id="produccion" min="1" max="100" oninput="calcularPorcentajeEconomica()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="sectorExterno">Sector externo:</label>
+                    <input type="number" id="sectorExterno" min="1" max="100" oninput="calcularPorcentajeEconomica()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="sectorPublicoNoFinanciero">Sector público no financiero:</label>
+                    <input type="number" id="sectorPublicoNoFinanciero" min="1" max="100" oninput="calcularPorcentajeEconomica()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="saldoDeudaPublica">Saldo de deuda pública:</label>
+                    <input type="number" id="saldoDeudaPublica" min="1" max="100" oninput="calcularPorcentajeEconomica()">
+                    <br>
+                    <hr>
+                </div>
+            </div>
+
+            <div id="coeficienteMultiplicadorEconomicaSection" style="display: none;">
+                <h3>Coeficiente Multiplicador</h3>
+                <div class="input-container">
+                    <label for="historicoEconomiaConflicto">Histórico de economía con el conflicto:</label>
+                    <select id="historicoEconomiaConflicto" onchange="calcularCoeficienteEconomica()">
+                        <option value="100">El conflicto lo aumenta 100%</option>
+                        <option value="55">El conflicto puede aumentarlo 55%</option>
+                        <option value="10">El conflicto no lo aumenta 10%</option>
+                    </select>
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="historicoPoderEconomiaConflicto">Histórico de poder de la economía sobre el conflicto:</label>
+                    <select id="historicoPoderEconomiaConflicto" onchange="calcularCoeficienteEconomica()">
+                        <option value="100">Puede aumentar el conflicto 100%</option>
+                        <option value="55">Difícilmente podrá aumentar el conflicto 55%</option>
+                        <option value="10">No aumentará el conflicto 10%</option>
+                    </select>
+                    <br>
+                    <hr>
+                </div>
+            </div>
+
+            <button onclick="guardarValoresEconomica()">Guardar</button>
+        </div>
+    </div>
+
+    <!-- Modal for Política -->
+    <div id="modalPolitica" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModalPolitica()">&times;</span>
+            <h2>Política</h2>
+
+            <div class="container">
+                <div>
+                    <button onclick="mostrarNivelPoderPolitica()">Nivel de Poder</button>
+                    <div class="resultado">Resultado: <span id="resultadoPolitica"></span></div>
+                </div>
+                <div>
+                    <button onclick="mostrarCoeficienteMultiplicadorPolitica()">Coeficiente Multiplicador</button>
+                    <div class="resultado">Resultado: <span id="resultadoCoeficientePolitica"></span></div>
+                </div>
+            </div>
+
+            <div id="nivelPoderPoliticaSection" style="display: none;">
+                <h3>Nivel de Poder</h3>
+                <div class="input-container">
+                    <label for="historicoPoderEconomiaConflicto">Histórico de poder de la economía sobre el conflicto (% de enfoque - Poder legislativo):</label>
+                    <input type="number" id="historicoPoderEconomiaConflicto" min="1" max="100" oninput="calcularPorcentajePolitica()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="nivelAprobacionInternacional">Nivel de aprobación percepción internacional (% de enfoque - Poder legislativo):</label>
+                    <input type="number" id="nivelAprobacionInternacional" min="1" max="100" oninput="calcularPorcentajePolitica()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="relacionFFAAEstado">Relación FFAA-Poder del estado (% de enfoque - Poder legislativo):</label>
+                    <input type="number" id="relacionFFAAEstado" min="1" max="100" oninput="calcularPorcentajePolitica()">
+                    <br>
+                    <hr>
+                </div>
+            </div>
+
+            <div id="coeficienteMultiplicadorPoliticaSection" style="display: none;">
+                <h3>Coeficiente Multiplicador</h3>
+                <div class="input-container">
+                    <label for="historicoSimultaneidadPolitica">Histórico de simultaneidad con el conflicto:</label>
+                    <select id="historicoSimultaneidadPolitica" onchange="calcularCoeficientePolitica()">
+                        <option value="100">El conflicto lo potencia 100%</option>
+                        <option value="62.50">Indeterminado 62.50%</option>
+                        <option value="25">El conflicto lo interrumpe 25%</option>
+                    </select>
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="historicoPoderConflictoPolitica">Histórico de poder sobre el conflicto:</label>
+                    <select id="historicoPoderConflictoPolitica" onchange="calcularCoeficientePolitica()">
+                        <option value="100">Puede potenciar capacidades 100%</option>
+                        <option value="62.50">Difícilmente podrá influir en las capacidades 62.50%</option>
+                        <option value="25">No influirá en las capacidades 25%</option>
+                    </select>
+                    <br>
+                    <hr>
+                </div>
+            </div>
+
+            <button onclick="guardarValoresPolitica()">Guardar</button>
+        </div>
+    </div>
+
+    <!-- Modal for Infraestructura -->
+    <div id="modalInfraestructura" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModalInfraestructura()">&times;</span>
+            <h2>Infraestructura</h2>
+
+            <div class="container">
+                <div>
+                    <button onclick="mostrarNivelPoderInfraestructura()">Nivel de Poder</button>
+                    <div class="resultado">Resultado: <span id="resultadoInfraestructura"></span></div>
+                </div>
+                <div>
+                    <button onclick="mostrarCoeficienteMultiplicadorInfraestructura()">Coeficiente Multiplicador</button>
+                    <div class="resultado">Resultado: <span id="resultadoCoeficienteInfraestructura"></span></div>
+                </div>
+            </div>
+
+            <div id="nivelPoderInfraestructuraSection" style="display: none;">
+                <h3>Nivel de Poder</h3>
+                <h4>Infraestructura Nacional</h4>
+                <div class="input-container">
+                    <label for="indiceGlobalInfraestructura">Índice global de infraestructura:</label>
+                    <input type="number" id="indiceGlobalInfraestructura" min="1" max="100" oninput="calcularPorcentajeInfraestructura()">
+                    <br>
+                    <hr>
+                </div>
+                <h4>Infraestructura Regional</h4>
+                <div class="input-container">
+                    <label for="aeropuertos">Aeropuertos:</label>
+                    <input type="number" id="aeropuertos" min="1" max="100" oninput="calcularPorcentajeInfraestructura()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="autopistas">Autopistas/Red principal de carreteras:</label>
+                    <input type="number" id="autopistas" min="1" max="100" oninput="calcularPorcentajeInfraestructura()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="redVialLocal">Red vial local:</label>
+                    <input type="number" id="redVialLocal" min="1" max="100" oninput="calcularPorcentajeInfraestructura()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="infraestructuraFerroviaria">Infraestructura ferroviaria:</label>
+                    <input type="number" id="infraestructuraFerroviaria" min="1" max="100" oninput="calcularPorcentajeInfraestructura()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="viviendas">Viviendas:</label>
+                    <input type="number" id="viviendas" min="1" max="100" oninput="calcularPorcentajeInfraestructura()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="defensaInundaciones">Defensa contra inundaciones:</label>
+                    <input type="number" id="defensaInundaciones" min="1" max="100" oninput="calcularPorcentajeInfraestructura()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="infraestructuraDigital">Infraestructura digital:</label>
+                    <input type="number" id="infraestructuraDigital" min="1" max="100" oninput="calcularPorcentajeInfraestructura()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="abastecimientoAgua">Abastecimiento de agua y alcantarillado:</label>
+                    <input type="number" id="abastecimientoAgua" min="1" max="100" oninput="calcularPorcentajeInfraestructura()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="energiasRenovables">Infraestructura de energías renovables (solar y eólica):</label>
+                    <input type="number" id="energiasRenovables" min="1" max="100" oninput="calcularPorcentajeInfraestructura()">
+                    <br>
+                    <hr>
+                </div>
+            </div>
+            
+
+            <div id="coeficienteMultiplicadorInfraestructuraSection" style="display: none;">
+                <h3>Coeficiente Multiplicador</h3>
+                <div class="input-container">
+                    <label for="historicoInfraestructuraConflicto">Histórico de infraestructura con el conflicto:</label>
+                    <select id="historicoInfraestructuraConflicto" onchange="calcularCoeficienteInfraestructura()">
+                        <option value="100">El conflicto lo aumenta 100%</option>
+                        <option value="57.50">El conflicto puede aumentarlo 57.50%</option>
+                        <option value="15">El conflicto no lo aumenta 15%</option>
+                    </select>
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="historicoPoderInfraestructuraConflicto">Histórico de poder de la infraestructura sobre el conflicto:</label>
+                    <select id="historicoPoderInfraestructuraConflicto"     onchange="calcularCoeficienteInfraestructura()">
+                        <option value="100">Puede aumentar el conflicto 100%</option>
+                        <option value="57.50">Difícilmente podrá aumentar el conflicto 57.50%</option>
+                        <option value="15">No aumentará el conflicto 15%</option>
+                    </select>
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="doctrinaInfraestructuraConflicto">Doctrina de infraestructura aplicada al conflicto:</label>
+                    <select id="doctrinaInfraestructuraConflicto" onchange="calcularCoeficienteInfraestructura()">
+                        <option value="100">No existe doctrina 100%</option>
+                        <option value="57.50">Doctrina está en desarrollo 57.50%</option>
+                        <option value="15">Existe doctrina 15%</option>
+                    </select>
+                    <br>
+                    <hr>
+                </div>
+            </div>
+
+            <button onclick="guardarValoresInfraestructura()">Guardar</button>
+        </div>
+    </div>
+
+<button enclick="">
+
+</button>
+
+    <!-- Modal for Terrorismo -->
+    <div id="modalTerrorismo" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModalTerrorismo()">&times;</span>
+            <h2>Terrorismo</h2>
+
+            <div class="container">
+                <div>
+                    <button onclick="mostrarNivelPoderTerrorismo()">Nivel de Poder</button>
+                    <div class="resultado">Resultado: <span id="resultadoTerrorismo"></span></div>
+                </div>
+                <div>
+                    <button onclick="mostrarCoeficienteMultiplicadorTerrorismo()">Coeficiente Multiplicador</button>
+                    <div class="resultado">Resultado: <span id="resultadoCoeficienteTerrorismo"></span></div>
+                </div>
+            </div>
+
+            <div id="nivelPoderTerrorismoSection" style="display: none;">
+                <h3>Nivel de Poder</h3>
+                <h4>Ausencia de grupos hostiles con presencia nacional</h4>
+                <div class="input-container">
+                    <label for="accionesTerroristasNacional">Ausencia de acciones Terroristas:</label>
+                    <input type="number" id="accionesTerroristasNacional" min="0" oninput="calcularPorcentajeTerrorismo()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="victimasMortalesNacional">Ausencia de víctimas mortales:</label>
+                    <input type="number" id="victimasMortalesNacional" min="0" oninput="calcularPorcentajeTerrorismo()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="heridosNacional">Ausencia de heridos:</label>
+                    <input type="number" id="heridosNacional" min="0" oninput="calcularPorcentajeTerrorismo()">
+                    <br>
+                    <hr>
+                </div>
+
+                <h4>Ausencia de grupos hostiles con presencia regional</h4>
+                <div class="input-container">
+                    <label for="accionesTerroristasRegional">Ausencia de acciones Terroristas:</label>
+                    <input type="number" id="accionesTerroristasRegional" min="0" oninput="calcularPorcentajeTerrorismo()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="victimasMortalesRegional">Ausencia de víctimas mortales:</label>
+                    <input type="number" id="victimasMortalesRegional" min="0" oninput="calcularPorcentajeTerrorismo()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="heridosRegional">Ausencia de heridos:</label>
+                    <input type="number" id="heridosRegional" min="0" oninput="calcularPorcentajeTerrorismo()">
+                    <br>
+                    <hr>
+                </div>
+
+                <h4>Ausencia de grupos remanentes con presencia regional</h4>
+                <div class="input-container">
+                    <label for="accionesTerroristasRemanentes">Ausencia de acciones Terroristas:</label>
+                    <input type="number" id="accionesTerroristasRemanentes" min="0" oninput="calcularPorcentajeTerrorismo()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="victimasMortalesRemanentes">Ausencia de víctimas mortales:</label>
+                    <input type="number" id="victimasMortalesRemanentes" min="0" oninput="calcularPorcentajeTerrorismo()">
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="heridosRemanentes">Ausencia de heridos:</label>
+                    <input type="number" id="heridosRemanentes" min="0" oninput="calcularPorcentajeTerrorismo()">
+                    <br>
+                    <hr>
+                </div>
+            </div>
+
+            <div id="coeficienteMultiplicadorTerrorismoSection" style="display: none;">
+                <h3>Coeficiente Multiplicador</h3>
+                <div class="input-container">
+                    <label for="historicoTerrorismo">Histórico de relación con el conflicto:</label>
+                    <select id="historicoTerrorismo" onchange="calcularCoeficienteTerrorismo()">
+                        <option value="100">El conflicto lo potencia 100%</option>
+                        <option value="62.50">Indeterminado 62.50%</option>
+                        <option value="25">El conflicto lo interrumpe 25%</option>
+                    </select>
+                    <br>
+                    <hr>
+                </div>
+                <div class="input-container">
+                    <label for="relacionFFAAEstadoTerrorismo">Relación FFAA-Ejecutivo:</label>
+                    <select id="relacionFFAAEstadoTerrorismo" onchange="calcularCoeficienteTerrorismo()">
+                        <option value="100">Es su jefe supremo</option>
+                        <option value="50">Son independientes</option>
+                        <option value="0">Son opuestos</option>
+                    </select>
+                    <br>
+                    <hr>
+                </div>
+                <div class="resultado">Resultado: <span id="resultadoCoeficienteTerrorismo">0%</span></div>
+            </div>
+
+            <button onclick="guardarValoresTerrorismo()">Guardar</button>
+        </div>
+    </div>
+
 </body>
 </html>
