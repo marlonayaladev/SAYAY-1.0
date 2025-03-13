@@ -7,8 +7,8 @@
     <script src="script.js" defer></script>
     <script src="header.js" defer></script>
     <link rel="stylesheet" href="style.css">
-
 </head>
+
 <body>
     <div id="inicio">
         <h1>Comparar Fuerza Combativa</h1>
@@ -671,7 +671,1127 @@
             </tbody>
         </table>
         <br>
+        <h2>SECCION III: ¿CON QUÉ CANTIDAD DE MEDIOS NAVALES CUENTA LA FUERZA?</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Medio Naval</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SUPERFICIE - FRAGATAS</td>
+                    <td><input type="number" class="input-fuerza" data-option="fragatas"></td>
+                </tr>
+                <tr>
+                    <td>SUPERFICIE - CORBETAS</td>
+                    <td><input type="number" class="input-fuerza" data-option="corbetas"></td>
+                </tr>
+                <tr>
+                    <td>SUPERFICIE - MULTIPROPOSITO</td>
+                    <td><input type="number" class="input-fuerza" data-option="multiproposito"></td>
+                </tr>
+                <tr>
+                    <td>SUBMARINO</td>
+                    <td><input type="number" class="input-fuerza" data-option="submarino"></td>
+                </tr>
+                <tr>
+                    <td>AERONAVE</td>
+                    <td><input type="number" class="input-fuerza" data-option="aeronave"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <h2>SECCION IV: ¿CUÁL ES EL ALCANCE MÁXIMO DE SUS SISTEMAS?</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Sistema</th>
+                    <th>FRAGATAS</th>
+                    <th>CORBETAS</th>
+                    <th>MULTI</th>
+                    <th>SUBMARINO</th>
+                    <th>AERONAVES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>MISILES</td>
+                    <td><input type="number" class="input-sistemas" data-option="misiles-fragatas"></td>
+                    <td><input type="number" class="input-sistemas" data-option="misiles-corbetas"></td>
+                    <td><input type="number" class="input-sistemas" data-option="misiles-multi"></td>
+                    <td><input type="number" class="input-sistemas" data-option="misiles-submarino"></td>
+                    <td><input type="number" class="input-sistemas" data-option="misiles-aeronaves"></td>
+                </tr>
+                <tr>
+                    <td>TORPEDOS</td>
+                    <td><input type="number" class="input-sistemas" data-option="torpedos-fragatas"></td>
+                    <td><input type="number" class="input-sistemas" data-option="torpedos-corbetas"></td>
+                    <td><input type="number" class="input-sistemas" data-option="torpedos-multi"></td>
+                    <td><input type="number" class="input-sistemas" data-option="torpedos-submarino"></td>
+                    <td><input type="number" class="input-sistemas" data-option="torpedos-aeronaves"></td>
+                </tr>
+                <tr>
+                    <td>ARTILLERÍA</td>
+                    <td><input type="number" class="input-sistemas" data-option="artilleria-fragatas"></td>
+                    <td><input type="number" class="input-sistemas" data-option="artilleria-corbetas"></td>
+                    <td><input type="number" class="input-sistemas" data-option="artilleria-multi"></td>
+                    <td><input type="number" class="input-sistemas" data-option="artilleria-submarino"></td>
+                    <td><input type="number" class="input-sistemas" data-option="artilleria-aeronaves"></td>
+                </tr>
+                <tr>
+                    <td>RADAR</td>
+                    <td><input type="number" class="input-sistemas" data-option="radar-fragatas"></td>
+                    <td><input type="number" class="input-sistemas" data-option="radar-corbetas"></td>
+                    <td><input type="number" class="input-sistemas" data-option="radar-multi"></td>
+                    <td><input type="number" class="input-sistemas" data-option="radar-submarino"></td>
+                    <td><input type="number" class="input-sistemas" data-option="radar-aeronaves"></td>
+                </tr>
+                <tr>
+                    <td>SONAR</td>
+                    <td><input type="number" class="input-sistemas" data-option="sonar-fragatas"></td>
+                    <td><input type="number" class="input-sistemas" data-option="sonar-corbetas"></td>
+                    <td><input type="number" class="input-sistemas" data-option="sonar-multi"></td>
+                    <td><input type="number" class="input-sistemas" data-option="sonar-submarino"></td>
+                    <td><input type="number" class="input-sistemas" data-option="sonar-aeronaves"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <h2>SECCION V: ¿CON QUÉ CANTIDAD DE MEDIOS NAVALES CUENTA EL ENEMIGO?</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Medio Naval</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SUPERFICIE - FRAGATAS</td>
+                    <td><input type="number" class="input-enemigo" data-option="enemigo-fragatas"></td>
+                </tr>
+                <tr>
+                    <td>SUPERFICIE - CORBETAS</td>
+                    <td><input type="number" class="input-enemigo" data-option="enemigo-corbetas"></td>
+                </tr>
+                <tr>
+                    <td>SUPERFICIE - MULTIPROPOSITO</td>
+                    <td><input type="number" class="input-enemigo" data-option="enemigo-multiproposito"></td>
+                </tr>
+                <tr>
+                    <td>SUBMARINO</td>
+                    <td><input type="number" class="input-enemigo" data-option="enemigo-submarino"></td>
+                </tr>
+                <tr>
+                    <td>AERONAVE</td>
+                    <td><input type="number" class="input-enemigo" data-option="enemigo-aeronave"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <h2>SECCION VI: ¿CUÁL ES EL ALCANCE MÁXIMO DE LOS SISTEMAS DEL ENEMIGO?</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Sistema</th>
+                    <th>FRAGATAS</th>
+                    <th>CORBETAS</th>
+                    <th>MULTI</th>
+                    <th>SUBMARINO</th>
+                    <th>AERONAVES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>MISILES</td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-misiles-fragatas"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-misiles-corbetas"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-misiles-multi"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-misiles-submarino"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-misiles-aeronaves"></td>
+                </tr>
+                <tr>
+                    <td>TORPEDOS</td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-torpedos-fragatas"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-torpedos-corbetas"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-torpedos-multi"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-torpedos-submarino"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-torpedos-aeronaves"></td>
+                </tr>
+                <tr>
+                    <td>ARTILLERÍA</td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-artilleria-fragatas"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-artilleria-corbetas"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-artilleria-multi"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-artilleria-submarino"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-artilleria-aeronaves"></td>
+                </tr>
+                <tr>
+                    <td>RADAR</td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-radar-fragatas"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-radar-corbetas"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-radar-multi"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-radar-submarino"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-radar-aeronaves"></td>
+                </tr>
+                <tr>
+                    <td>SONAR</td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-sonar-fragatas"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-sonar-corbetas"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-sonar-multi"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-sonar-submarino"></td>
+                    <td><input type="number" class="input-sistemas-enemigo" data-option="enemigo-sonar-aeronaves"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
         <button id="volverOperacionalNaval">⬅ Volver</button>
+    </div>
+
+    <div id="fuerzaMilitarSection" style="display: none;">
+        <h2>SECCION I: FACTORES DE CAPACIDAD MILITAR</h2>
+        
+        <!-- Timeline Navigation -->
+        <div class="timeline-nav">
+            <div class="timeline-item active" data-table="1">1</div>
+            <div class="timeline-item" data-table="2">2</div>
+            <div class="timeline-item" data-table="3">3</div>
+            <div class="timeline-item" data-table="4">4</div>
+            <div class="timeline-item" data-table="5">5</div>
+        </div>
+
+        
+
+        <div id="tablaFuerzaMilitar">
+            <!-- Table 1 - Already exists -->
+            <table border="1" class="military-factors-full" id="table1">
+                <thead>
+                    <tr>
+                        <th>Factor de Capacidad</th>
+                        <th>Peso (%)</th>
+                        <th>Criterio de Evaluación</th>
+                        <th>Valor Asignado (Escala 1-10)</th>
+                        <th>Perú</th>
+                        <th>País Seleccionado</th>
+                        <th>Justificación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Capacidad Doctrinal</td>
+                        <td>13%</td>
+                        <td>Evaluación de la capacidad doctrinal en términos de adaptación a amenazas modernas y conflictos híbridos</td>
+                        <td>
+                            <input type="number" min="1" max="10" class="valor-asignado">
+                        </td>
+                        <td>
+                            <input type="number" min="1" max="10" class="azul-input">
+                        </td>
+                        <td>
+                            <input type="number" min="1" max="10" class="verde-input">
+                        </td>
+                        <td>NATO Allied Joint Doctrine</td>
+                    </tr>
+                    <tr>
+                        <td>Capacidad de Mando y Control</td>
+                        <td>12%</td>
+                        <td>Capacidad de mando, control y flexibilidad estructural en operaciones nacionales e internacionales</td>
+                        <td>
+                            <input type="number" min="1" max="10" class="valor-asignado">
+                        </td>
+                        <td>
+                            <input type="number" min="1" max="10" class="azul-input">
+                        </td>
+                        <td>
+                            <input type="number" min="1" max="10" class="verde-input">
+                        </td>
+                        <td>U.S. Army War College</td>
+                    </tr>
+                    <tr>
+                        <td>Preparación y Ejercicios</td>
+                        <td>18%</td>
+                        <td>Nivel de preparación y frecuencia de ejercicios conjuntos con fuerzas aliadas</td>
+                        <td>
+                            <input type="number" min="1" max="10" class="valor-asignado">
+                        </td>
+                        <td>
+                            <input type="number" min="1" max="10" class="azul-input">
+                        </td>
+                        <td>
+                            <input type="number" min="1" max="10" class="verde-input">
+                        </td>
+                        <td>RAND Corporation</td>
+                    </tr>
+                    <tr>
+                        <td>Modernización del Material Bélico</td>
+                        <td>17%</td>
+                        <td>Nivel de modernización y operatividad del material bélico</td>
+                        <td>
+                            <input type="number" min="1" max="10" class="valor-asignado">
+                        </td>
+                        <td>
+                            <input type="number" min="1" max="10" class="azul-input">
+                        </td>
+                        <td>
+                            <input type="number" min="1" max="10" class="verde-input">
+                        </td>
+                        <td>Global Firepower</td>
+                    </tr>
+                    <tr>
+                        <td>Formación Académica Militar</td>
+                        <td>12%</td>
+                        <td>Formación académica militar y desarrollo de pensamiento estratégico</td>
+                        <td>
+                            <input type="number" min="1" max="10" class="valor-asignado">
+                        </td>
+                        <td>
+                            <input type="number" min="1" max="10" class="azul-input">
+                        </td>
+                        <td>
+                            <input type="number" min="1" max="10" class="verde-input">
+                        </td>
+                        <td>CSIS</td>
+                    </tr>
+                    <tr>
+                        <td>Calidad de la Tropa</td>
+                        <td>18%</td>
+                        <td>Calidad de la tropa en términos de disciplina, moral y experiencia en combate</td>
+                        <td>
+                            <input type="number" min="1" max="10" class="valor-asignado">
+                        </td>
+                        <td>
+                            <input type="number" min="1" max="10" class="azul-input">
+                        </td>
+                        <td>
+                            <input type="number" min="1" max="10" class="verde-input">
+                        </td>
+                        <td>Men Against Fire</td>
+                    </tr>
+                    <tr>
+                        <td>Infraestructura y Logística</td>
+                        <td>10%</td>
+                        <td>Bases, logística y capacidad de despliegue estratégico</td>
+                        <td>
+                            <input type="number" min="1" max="10" class="valor-asignado">
+                        </td>
+                        <td>
+                            <input type="number" min="1" max="10" class="azul-input">
+                        </td>
+                        <td>
+                            <input type="number" min="1" max="10" class="verde-input">
+                        </td>
+                        <td>SIPRI</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Table 2 - New capability groups table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>FCG</th>
+                        <th>Unidad</th>
+                        <th>Coeficiente</th>
+                        <th>Ponderación por característica</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="6">Movimiento y maniobra</td>
+                        <td>Vehículos de combate</td>
+                        <td>4</td>
+                        <td>
+                            <table style="width:100%; border-collapse:collapse;" cellspacing="0" cellpadding="4">
+                                <tr>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Blindaje</td></tr>
+                                            <tr><td>1</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Poder de fuego</td></tr>
+                                            <tr><td>1.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Movilidad</td></tr>
+                                            <tr><td>0.8</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Sistema de control de fuego</td></tr>
+                                            <tr><td>0.6</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Apoyo logístico</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Cantidad de vehículos</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Vehículos de apoyo de combate</td>
+                        <td>1</td>
+                        <td>
+                            <table style="width:100%; border-collapse:collapse;" cellspacing="0" cellpadding="4">
+                                <tr>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Blindaje</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Poder de fuego</td></tr>
+                                            <tr><td>0.3</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Movilidad</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Sistema de control de fuego</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Apoyo logístico</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Cantidad</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Vehículos porta tropa o de transporte de tropa</td>
+                        <td>1</td>
+                        <td>
+                            <table style="width:100%; border-collapse:collapse;" cellspacing="0" cellpadding="4">
+                                <tr>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Blindaje</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Poder de fuego</td></tr>
+                                            <tr><td>0.3</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Movilidad</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Sistema de control de fuego</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Apoyo logístico</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Cantidad</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Avión de transporte</td>
+                        <td>1</td>
+                        <td>
+                            <table style="width:100%; border-collapse:collapse;" cellspacing="0" cellpadding="4">
+                                <tr>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Capacidad de Carga</td></tr>
+                                            <tr><td>0.4</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Autonomía</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Movilidad</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Tecnología</td></tr>
+                                            <tr><td>0.1</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Eficiencia de combustible</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Cantidad</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Helicopteros de transporte</td>
+                        <td>1.5</td>
+                        <td>
+                            <table style="width:100%; border-collapse:collapse;" cellspacing="0" cellpadding="4">
+                                <tr>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Capacidad de Carga</td></tr>
+                                            <tr><td>0.4</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Autonomía</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Movilidad</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Tecnología</td></tr>
+                                            <tr><td>0.1</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Eficiencia de Combustible</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Cantidad</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tropas</td>
+                        <td>1</td>
+                        <td>
+                            <table style="width:100%; border-collapse:collapse;" cellspacing="0" cellpadding="4">
+                                <tr>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Moral</td></tr>
+                                            <tr><td>0.3</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Entrenamiento</td></tr>
+                                            <tr><td>0.4</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Experiencia</td></tr>
+                                            <tr><td>0.45</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Cohesión del grupo</td></tr>
+                                            <tr><td>0.35</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Fuegos</td>
+                        <td>Artillería</td>
+                        <td>1.5</td>
+                        <td>
+                            <table style="width:100%; border-collapse:collapse;" cellspacing="0" cellpadding="4">
+                                <tr>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Movilidad</td></tr>
+                                            <tr><td>0.3</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Potencia de Fuego</td></tr>
+                                            <tr><td>0.6</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Precisión</td></tr>
+                                            <tr><td>0.4</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Facilidad de Despliegue</td></tr>
+                                            <tr><td>0.1</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Tecnología</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Cantidad</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Morteros</td>
+                        <td>1</td>
+                        <td>
+                            <table style="width:100%; border-collapse:collapse;" cellspacing="0" cellpadding="4">
+                                <tr>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Calibre</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Alcance máximo</td></tr>
+                                            <tr><td>0.3</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Potencia de fuegos</td></tr>
+                                            <tr><td>0.3</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Movilidad</td></tr>
+                                            <tr><td>0.1</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Tiempo de preparación y despliegue</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Cantidad</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">Protección</td>   <!-- Changed from 4 to 3 -->
+                        <td>Antitanque</td>
+                        <td>1.3</td>
+                        <td>
+                            <table style="width:100%; border-collapse:collapse;" cellspacing="0" cellpadding="4">
+                                <tr>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Alcance</td></tr>
+                                            <tr><td>0.3</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Penetración de blindaje</td></tr>
+                                            <tr><td>0.3</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Operación en condiciones extremas</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Efectividad</td></tr>
+                                            <tr><td>0.1</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Tipo de guía</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Cantidad de cohetes</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Artillería antiaerea</td>
+                        <td>1.4</td>
+                        <td>
+                            <table style="width:100%; border-collapse:collapse;" cellspacing="0" cellpadding="4">
+                                <tr>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Alcance efectivo</td></tr>
+                                            <tr><td>0.3</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Precisión</td></tr>
+                                            <tr><td>0.3</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Movilidad</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Sistema de rastreo</td></tr>
+                                            <tr><td>0.1</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Tecnología</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Cantidad</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Vehículos de ingeniería militar</td>
+                        <td>1.2</td>
+                        <td>
+                            <table style="width:100%; border-collapse:collapse;" cellspacing="0" cellpadding="4">
+                                <tr>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Capacidad de Construcción</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Colocación de Minas</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Despeje de Terreno</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Movilidad</td></tr>
+                                            <tr><td>0.1</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Puente</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Cantidad</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>C2</td>
+                        <td>Comando y control</td>
+                        <td>1.5</td>
+                        <td>
+                            <table style="width:100%; border-collapse:collapse;" cellspacing="0" cellpadding="4">
+                                <tr>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Alcance</td></tr>
+                                            <tr><td>0.5</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Fiabilidad</td></tr>
+                                            <tr><td>0.4</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Capacidad de Comunicación</td></tr>
+                                            <tr><td>0.3</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Flexibilidad Operacional</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Tecnología de Comunicación</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Cantidad</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>IVR</td>
+                        <td>Inteligencia, Vigilancia y Reconocimiento</td>
+                        <td>1.5</td>
+                        <td>
+                            <table style="width:100%; border-collapse:collapse;" cellspacing="0" cellpadding="4">
+                                <tr>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Autonomía (Horas)</td></tr>
+                                            <tr><td>0.4</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Altitud Máxima de Vuelo (Metros)</td></tr>
+                                            <tr><td>0.3</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Carga Útil (Kg)</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Velocidad Máxima (Km/h)</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Rango de Comunicación (Km)</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Cantidad</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Sostenimiento</td>
+                        <td>Vehículos de apoyo administrativo</td>
+                        <td>0.8</td>
+                        <td>
+                            <table style="width:100%; border-collapse:collapse;" cellspacing="0" cellpadding="4">
+                                <tr>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Capacidad de Carga</td></tr>
+                                            <tr><td>0.3</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Movilidad</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Fiabilidad</td></tr>
+                                            <tr><td>0.1</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Versatilidad</td></tr>
+                                            <tr><td>0.1</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Tecnología</td></tr>
+                                            <tr><td>0.1</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Cantidad</td></tr>
+                                            <tr><td>0.2</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ambulancias</td>
+                        <td>0.5</td>
+                        <td>
+                            <table style="width:100%; border-collapse:collapse;" cellspacing="0" cellpadding="4">
+                                <tr>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Capacidad de Carga</td></tr>
+                                            <tr><td>0.1</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Movilidad</td></tr>
+                                            <tr><td>0.1</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Resistencia</td></tr>
+                                            <tr><td>0.1</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Tecnología</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Autonomía</td></tr>
+                                            <tr><td>0.05</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="width:100%; border-collapse:collapse;">
+                                            <tr><td>Cantidad</td></tr>
+                                            <tr><td>0.1</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+<!-- tabla 3 -->
+
+<table>
+    <thead>
+        <tr>
+            <th>Factor de capacidad</th>
+            <th>Peso %</th>
+            <th>Ejército</th>
+            <th>Valor Asignado (Escala 1-10)</th>
+            <th>Justificación</th>
+            <th>Ejército</th>
+            <th>Valor Asignado (Escala 1-10)</th>
+            <th>Justificación</th>
+            <th>Azul</th>
+            <th>Verde</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Doctrina</td>
+            <td>0.13</td>
+            <td>Azul</td>
+            <td>7</td>
+            <td>El Ejército de Azul tiene una doctrina bien estructurada para guerra convencional en zonas áridas y desiertos debido a su experiencia histórica en estos terrenos. La doctrina ha desarrollado estrategias de combate altamente móviles en movilidad en altura y adaptación al clima extremo. Sin embargo, en la Amazonía, enfrenta desafíos debido a la dificultad de aplicación de doctrinas convencionales en ambientes selváticos, donde el combate requiere mayor flexibilidad, tácticas de infiltración y adaptación a terreno denso y hostil. Si bien existen mejoras en la doctrina en esta área, se requiere actualización para una mejor integración de nuevas amenazas.</td>
+            <td>Verde</td>
+            <td>8</td>
+            <td>El Ejército de Verde posee una doctrina bien estructurada, con un enfoque en operaciones convencionales, seguridad interna y despliegues internacionales. Su doctrina ha sido adaptada para misiones de paz y conflictos de baja intensidad, lo que le ha permitido operar en entornos diversos. Además, mantiene una política de actualización doctrinal constante mediante cooperación con aliados como Estados Unidos y la OTAN. Sin embargo, en comparación con potencias militares avanzadas, aún puede optimizar su capacidad para conflictos de alta intensidad.</td>
+            <td>0.91</td>
+            <td>1.04</td>
+        </tr>
+        <tr>
+            <td>Organización</td>
+            <td>0.12</td>
+            <td>Azul</td>
+            <td>7</td>
+            <td>La estructura del Ejército de Azul es de alto nivel en zonas desérticas, ya que se realizan frecuentes ejercicios en estas áreas, permitiendo mejorar la movilidad y el control del terreno aún manejados con eficacia. No obstante, en la Amazonía ha demostrado limitaciones en el control de esta área debido a dificultades de movilidad y abastecimiento importantes en capacidad operativa. En conflictos internacionales, enfrenta restricciones en despliegue y coordinación debido a una menor integración en misiones de coalición.</td>
+            <td>Verde</td>
+            <td>9</td>
+            <td>La estructura del Ejército de Verde está diseñada para operar en diferentes entornos geográficos, desde la selva amazónica hasta zonas urbanas y rurales. Su capacidad de proyección de fuerza y operaciones conjuntas con otras ramas militares y aliados la posicionan como un ejército de alta preparación estratégica. Además, su mando y control permite una rápida movilización en situaciones de emergencia y conflictos internacionales, lo que la convierte en una fuerza flexible y eficiente.</td>
+            <td>0.84</td>
+            <td>1.08</td>
+        </tr>
+        <tr>
+            <td>Instrucción y Entrenamiento</td>
+            <td>0.18</td>
+            <td>Azul</td>
+            <td>7</td>
+            <td>La instrucción del Ejército de Azul es de alto nivel en zonas desérticas, ya que se realizan frecuentes ejercicios en estas áreas, permitiendo mejorar la movilidad y la capacidad de supervivencia en condiciones extremas. En montaña, si bien hay formación específica, la cantidad de ejercicios podría optimizarse para mejorar la efectividad en combate en este tipo de terreno. En selva, aunque las fuerzas especiales tienen un gran capacidad de adaptación y experiencia, el entrenamiento general enfrenta dificultades. La instrucción en guerra convencional no incorpora estos ambientes en su totalidad. Otro factor es que el servicio militar voluntario, que dura dos años, no siempre se aprovecha en su totalidad en entrenamiento táctico, ya que parte de los reclutas son empleados en funciones administrativas, lo que reduce su preparación efectiva para combate.</td>
+            <td>Verde</td>
+            <td>9</td>
+            <td>El Ejército de Verde tiene un entrenamiento diversificado y adaptado a diferentes tipos de combate. Su personal recibe formación en selva, combate urbano y montaña además de colaboración con organismos internacionales. También realiza ejercicios conjuntos con Estados Unidos, Francia y otros aliados, lo que fortalece la capacidad de respuesta en escenarios internacionales. La preparación de sus fuerzas especiales es altamente reconocida a nivel regional. Sin embargo, el entrenamiento en guerra convencional aún podría beneficiarse de una mayor integración de simulaciones avanzadas y tecnologías emergentes.</td>
+            <td>1.26</td>
+            <td>1.62</td>
+        </tr>
+        <tr>
+            <td>Equipamiento</td>
+            <td>0.17</td>
+            <td>Azul</td>
+            <td>5</td>
+            <td>El equipamiento del Ejército de Azul es funcional y adecuado para operaciones de baja intensidad, pero enfrenta deficiencias en modernización y capacidad tecnológica operativa. Sus vehículos blindados, por ejemplo, requieren mejoras para optimizar su desempeño en terrenos accidentados. En armamento individual, aunque cuenta con fusiles y equipos de calidad, en comparación con ejércitos de mayor capacidad de defensa, la actualización de sistemas de defensa aérea y artillería aún es un desafío. Su dependencia de importaciones hace que la renovación de equipos sea lenta y las piezas de repuesto sean limitadas.</td>
+            <td>Verde</td>
+            <td>8</td>
+            <td>El Ejército de Verde cuenta con una industria de defensa desarrollada, lo que le permite producir y modernizar su propio equipamiento militar. Empresas como Embraer y Avibras lideran avances en vehículos blindados y sistemas de misiles que han mejorado la capacidad de defensa. Sin embargo, aún depende de importaciones para ciertos sistemas avanzados. A pesar de esto, el país está en proceso de modernización con un enfoque en la autosuficiencia en componentes clave de defensa, lo que otorga una ventaja significativa en comparación con otros ejércitos de la región.</td>
+            <td>129.985</td>
+            <td>6131.23</td>
+        </tr>
+        <tr>
+            <td>Educación</td>
+            <td>0.12</td>
+            <td>Azul</td>
+            <td>7</td>
+            <td>La formación académica de los oficiales del Ejército de Azul es adecuada, con una estructura educativa sólida en la Escuela Militar de Chorrillos y el Centro de Altos Estudios Nacionales (CAEN). Sin embargo, la capacitación en el extranjero es limitada, lo que reduce la posibilidad de que los oficiales adopten doctrinas y estrategias más avanzadas de otros ejércitos. A pesar de esto, los programas de liderazgo y desarrollo de pensamiento estratégico son de alta calidad, y los oficiales tienen acceso a académicos internacionales de alto nivel, lo que eleva esta área a un área de mejora.</td>
+            <td>Verde</td>
+            <td>9</td>
+            <td>El Ejército de Verde tiene instituciones militares reconocidas, como la Academia Militar das Agulhas Negras, que forma oficiales con un alto nivel de preparación. Además, su programa de intercambio con academias militares extranjeras, especialmente en Estados Unidos, Europa y Asia, permite a los oficiales adquirir conocimientos avanzados y técnicas de liderazgo estratégico. Esto le otorga una ventaja significativa en términos de desarrollo estratégico y liderazgo.</td>
+            <td>1.08</td>
+            <td>1.08</td>
+        </tr>
+        <tr>
+            <td>Personal</td>
+            <td>0.18</td>
+            <td>Azul</td>
+            <td>8</td>
+            <td>El Ejército de Azul cuenta con una tropa numerosa, profesionalizada y con alta moral. Su experiencia en combate en zonas de conflicto interno ha fortalecido su capacidad operativa. Además, la moral y disciplina de la tropa son altas. Sin embargo, la falta de veteranos de guerra internacional y pocos soldados de servicio militar voluntario afectan la calidad general de la tropa en comparación con ejércitos de mayor capacidad operativa.</td>
+            <td>Verde</td>
+            <td>9</td>
+            <td>El personal militar del Ejército de Verde es numeroso, profesionalizado y con alta moral. Su experiencia en combate en zonas de conflicto interno ha fortalecido su capacidad operativa. Además, la moral y disciplina de la tropa son altas. Sin embargo, la falta de veteranos de guerra internacional y pocos soldados de servicio militar voluntario afectan la calidad general de la tropa en comparación con ejércitos de mayor capacidad operativa.</td>
+            <td>1.44</td>
+            <td>1.62</td>
+        </tr>
+        <tr>
+            <td>Infraestructura</td>
+            <td>0.10</td>
+            <td>Azul</td>
+            <td>5</td>
+            <td>La infraestructura del Ejército de Azul es operativa, pero enfrenta desafíos en términos de logística en varias áreas. Algunas bases presentan limitaciones en mantenimiento y logística, especialmente en áreas de alta rotación como la Amazonía. En comparación con ejércitos más desarrollados, la infraestructura de Azul requiere mejoras en términos de redes logísticas estratégicas y en tecnología de comunicación para mejorar la coordinación en el campo.</td>
+            <td>Verde</td>
+            <td>8</td>
+            <td>La infraestructura del Ejército de Verde está bien distribuida, lo que le permite una rápida movilización y respuesta en situaciones de emergencia. Sus bases están bien mantenidas y cuentan con redes logísticas avanzadas que permiten una rápida movilización y respuesta en situaciones de emergencia. En comparación con otros ejércitos de la región, Verde tiene una ventaja significativa en términos de sostenibilidad operativa y capacidad de despliegue rápido.</td>
+            <td>0.5</td>
+            <td>0.8</td>
+        </tr>
+    </tbody>
+</table>
+
+        <button id="volverOperacionalMilitar">⬅ Volver</button>
     </div>
 
     <!-- Modal for Liderazgo Nacional -->
@@ -1219,7 +2339,7 @@
             </div>
 
             <div id="nivelPoderTerrorismoSection" style="display: none;">
-                <h3>Nivel de Poder</h3>
+                <h3>Nivel de Poder</h4>
                 <h4>Ausencia de grupos hostiles con presencia nacional</h4>
                 <div class="input-container">
                     <label for="accionesTerroristasNacional">Ausencia de acciones Terroristas:</label>
@@ -1307,6 +2427,61 @@
             </div>
 
             <button onclick="guardarValoresTerrorismo()">Guardar</button>
+        </div>
+    </div>
+
+    <button id="poderCombatienteRelativo" class="btn-pcr" onclick="mostrarPoderCombatienteRelativo()">
+        Poder Combatiente Relativo
+    </button>
+
+    <!-- Modal para Poder Combatiente Relativo -->
+    <div id="modalPCR" class="modal">
+        <div class="modal-content pcr-content">
+            <span class="close" onclick="cerrarModalPCR()">&times;</span>
+            <h1>Poder Combatiente Relativo</h1>
+            <div class="table-container">
+                <table>
+                    <tr><th colspan="2">Fuerza de Superficie Perú</th></tr>
+                    <tr><td>ALMIRANTE GRAU</td><td>CLM-81</td></tr>
+                    <tr><td>CARVAJAL - SH-30</td><td>FM-51</td></tr>
+                    <tr><td>VILLAVISENCIO</td><td>FM-52</td></tr>
+                    <tr><td>MONTERO</td><td>FM-53</td></tr>
+                    <tr><td>MARIATEGUI - SH-34</td><td>FM-54</td></tr>
+                    <tr><td>AGUIRRE</td><td>FM-55</td></tr>
+                    <tr><td>PALACIOS</td><td>FM-56</td></tr>
+                    <tr><td>QUIÑONES - AB-212</td><td>CM-21</td></tr>
+                    <tr><td>VILLEGAS - AB-212</td><td>CM-22</td></tr>
+                    <tr><td>DEL SOLAR</td><td>CM-23</td></tr>
+                </table>
+
+                <table>
+                    <tr><th colspan="2">Escuadra País Seleccionado</th></tr>
+                    <tr><td>ALMIRANTE COCHRANE - SH-23</td><td>FF-05</td></tr>
+                    <tr><td>ALMIRANTE LYNCH</td><td>FF-06</td></tr>
+                    <tr><td>ALMIRANTE CONDELL</td><td>FF-07</td></tr>
+                    <tr><td>ALMIRANTE BLANCO</td><td>FF-14</td></tr>
+                    <tr><td>ALMIRANTE LATORRE</td><td>FF-15</td></tr>
+                    <tr><td>ALMIRANTE WILLIAMS - SH-32</td><td>LM-31</td></tr>
+                    <tr><td>LM-32</td><td></td></tr>
+                    <tr><td>LM-33</td><td></td></tr>
+                    <tr><td>LM-34</td><td></td></tr>
+                    <tr><td>LM-35</td><td></td></tr>
+                </table>
+            </div>
+
+            <div class="input-container">
+                <label>PCR ASIMÉTRICO Perú: <input type="number" id="pcrPeru" value="1.0" step="0.1"></label>
+                <label>PCR ASIMÉTRICO País Seleccionado: <input type="number" id="pcrPaisSeleccionado" value="3.3" step="0.1"></label>
+                <button onclick="actualizarGrafico()">Actualizar</button>
+            </div>
+
+            <div class="chart-container">
+                <h2>PCR ASIMÉTRICO</h2>
+                <div class="bar-chart">
+                    <div id="barPeru" class="bar peru" style="height: 25%;">1.0</div>
+                    <div id="barPaisSeleccionado" class="bar chile" style="height: 75%;">3.3</div>
+                </div>
+            </div>
         </div>
     </div>
 

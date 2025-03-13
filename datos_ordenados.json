@@ -1,0 +1,267 @@
+[
+    [
+        "Tabla de Factores de capacidad"
+    ],
+
+    [
+        "Factor de capacidad",
+        "Peso (%)",
+        "Criterio de Evaluación",
+        "Valor Asignado (Escala 1-10)",
+        "Azul",
+        "Verde",
+        "Justificación"
+    ],
+    [
+        "Doctrina",
+        0.13,
+        "Evaluación de la capacidad doctrinal en términos de adaptación a amenazas modernas y conflictos híbridos.",
+        "1-3: Doctrina desactualizada y poco adaptable a nuevos escenarios.",
+        7,
+        8,
+        "Basado en NATO Allied Joint Doctrine, una doctrina efectiva debe permitir operaciones en múltiples escenarios, con capacidad de actualización constante. Los ejércitos con doctrinas modernas se adaptan mejor a guerras híbridas, mientras que los que dependen de modelos tradicionales tienen menos flexibilidad operativa."
+    ],
+    [
+        null,
+        null,
+        null,
+        "4-6: Doctrina funcional pero con limitaciones en conflictos modernos.",
+        null,
+        null,
+        null
+    ],
+    [
+        null,
+        null,
+        null,
+        "7-8: Doctrina moderna y adaptable a escenarios híbridos y asimétricos.",
+        null,
+        null,
+        null
+    ],
+    [
+        null,
+        null,
+        null,
+        "9-10: Doctrina de referencia global, con estrategias avanzadas de guerra multidimensional.",
+        null,
+        null,
+        null
+    ],
+    [
+        "Organización",
+        0.12,
+        "Capacidad de mando, control y flexibilidad estructural en operaciones nacionales e internacionales.",
+        "1-3: Estructura rígida, con problemas de mando y control.",
+        7,
+        9,
+        "Según estudios del U.S. Army War College, una estructura flexible permite adaptarse mejor a conflictos dinámicos. Los ejércitos que han optimizado su mando y control tienen mayor capacidad de respuesta ante crisis."
+    ],
+    [
+        null,
+        null,
+        null,
+        "4-6: Organización funcional pero con limitaciones en coordinación conjunta.",
+        null,
+        null,
+        null
+    ],
+    [
+        null,
+        null,
+        null,
+        "7-8: Organización eficiente, con interoperabilidad entre unidades y ramas.",
+        null,
+        null,
+        null
+    ],
+    [
+        null,
+        null,
+        null,
+        "9-10: Organización altamente flexible, con mando y control avanzado a nivel internacional.",
+        null,
+        null,
+        null
+    ],
+    [
+        "Instrucción y Entrenamiento",
+        0.18,
+        "Nivel de preparación y frecuencia de ejercicios conjuntos con fuerzas aliadas.",
+        "1-3: Entrenamiento deficiente, sin ejercicios regulares o internacionales.",
+        7,
+        9,
+        "RAND Corporation (Measuring Army Readiness) destaca que la preparación del personal es un factor crítico en la efectividad de combate. Los ejércitos que entrenan regularmente con aliados y simulan múltiples escenarios tienen ventaja operativa."
+    ],
+    [
+        null,
+        null,
+        null,
+        "4-6: Entrenamiento funcional, pero con limitaciones en escenarios de combate real.",
+        null,
+        null,
+        null
+    ],
+    [
+        null,
+        null,
+        null,
+        "7-8: Entrenamiento avanzado con énfasis en preparación táctica y operativa.",
+        null,
+        null,
+        null
+    ],
+    [
+        null,
+        null,
+        null,
+        "9-10: Entrenamiento de élite, con participación constante en ejercicios multinacionales.",
+        null,
+        null,
+        null
+    ],
+    [
+        "Equipamiento",
+        0.17,
+        "Nivel de modernización y operatividad del material bélico.",
+        "1-3: Equipamiento obsoleto, con dependencia de sistemas desfasados.",
+        5,
+        8,
+        "Datos de Global Firepower y International Institute for Strategic Studies (IISS) muestran que los países con industrias de defensa desarrolladas tienen ventajas estratégicas, ya que no dependen de importaciones y pueden mantener operatividad en conflictos prolongados."
+    ],
+    [
+        null,
+        null,
+        null,
+        "4-6: Equipamiento funcional pero con necesidad de modernización.",
+        null,
+        null,
+        null
+    ],
+    [
+        null,
+        null,
+        null,
+        "7-8: Equipamiento moderno con integración tecnológica avanzada.",
+        null,
+        null,
+        null
+    ],
+    [
+        null,
+        null,
+        null,
+        "9-10: Equipamiento de vanguardia, con industria propia de defensa y sistemas de última generación.",
+        null,
+        null,
+        null
+    ],
+    [
+        "Educación",
+        0.12,
+        "Formación académica militar y desarrollo de pensamiento estratégico.",
+        "1-3: Educación deficiente, sin desarrollo de doctrina propia.",
+        6,
+        9,
+        "Según el Center for Strategic & International Studies (CSIS), la formación en pensamiento estratégico es clave para la toma de decisiones militares. Las academias militares de prestigio producen líderes con visión táctica y estratégica."
+    ],
+    [
+        null,
+        null,
+        null,
+        "4-6: Formación básica adecuada, pero con pocas oportunidades de desarrollo estratégico.",
+        null,
+        null,
+        null
+    ],
+    [
+        null,
+        null,
+        null,
+        "7-8: Educación avanzada, con programas de liderazgo y análisis estratégico.",
+        null,
+        null,
+        null
+    ],
+    [
+        null,
+        null,
+        null,
+        "9-10: Instituciones militares de élite con reconocimiento global.",
+        null,
+        null,
+        null
+    ],
+    [
+        "Personal",
+        0.18,
+        "Calidad de la tropa en términos de disciplina, moral y experiencia en combate.",
+        "1-3: Personal con bajo nivel de moral, disciplina y preparación.",
+        8,
+        9,
+        "Men Against Fire (S.L.A. Marshall) argumenta que la moral y la disciplina de la tropa son factores clave en la efectividad de combate. Un ejército bien entrenado y motivado tiene ventajas sobre fuerzas con menos cohesión y preparación."
+    ],
+    [
+        null,
+        null,
+        null,
+        "4-6: Personal competente, con experiencia limitada en combate.",
+        null,
+        null,
+        null
+    ],
+    [
+        null,
+        null,
+        null,
+        "7-8: Fuerza altamente disciplinada y con experiencia en combate real.",
+        null,
+        null,
+        null
+    ],
+    [
+        null,
+        null,
+        null,
+        "9-10: Fuerza con entrenamiento de élite, experiencia en múltiples teatros de operaciones y alta moral.",
+        null,
+        null,
+        null
+    ],
+    [
+        "Infraestructura",
+        0.1,
+        "Bases, logística y capacidad de despliegue estratégico.",
+        "1-3: Infraestructura limitada, sin capacidad de despliegue eficiente.",
+        5,
+        8,
+        "Según Stockholm International Peace Research Institute (SIPRI), la infraestructura militar determina la capacidad de un país para sostener operaciones prolongadas y responder a crisis de manera rápida y eficiente."
+    ],
+    [
+        null,
+        null,
+        null,
+        "4-6: Infraestructura funcional, pero con deficiencias logísticas.",
+        null,
+        null,
+        null
+    ],
+    [
+        null,
+        null,
+        null,
+        "7-8: Infraestructura bien desarrollada, con redes logísticas avanzadas.",
+        null,
+        null,
+        null
+    ],
+    [
+        null,
+        null,
+        null,
+        "9-10: Infraestructura militar de primer nivel, con capacidad de despliegue global.",
+        null,
+        null,
+        null
+    ]
+]

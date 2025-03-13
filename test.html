@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poder Combatiente Relativo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .table-container {
+            display: flex;
+            justify-content: space-around;
+            width: 90%;
+            margin-top: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 45%;
+            background-color: #fff;
+            border: 2px solid black;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: left;
+        }
+        th {
+            background-color: lightgray;
+        }
+        .chart-container {
+            margin-top: 20px;
+        }
+        .bar-chart {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 200px;
+            width: 50%;
+            margin: auto;
+            border: 1px solid black;
+            background-color: #f0f0f0;
+            position: relative;
+        }
+        .bar {
+            width: 40%;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            bottom: 0;
+        }
+        .peru { background-color: blue; left: 10%; }
+        .chile { background-color: red; right: 10%; }
+        .input-container {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Poder Combatiente Relativo</h1>
+    <div class="table-container">
+        <table>
+            <tr><th colspan="2">Fuerza de Superficie Perú</th></tr>
+            <tr><td>ALMIRANTE GRAU</td><td>CLM-81</td></tr>
+            <tr><td>CARVAJAL - SH-30</td><td>FM-51</td></tr>
+            <tr><td>VILLAVISENCIO</td><td>FM-52</td></tr>
+            <tr><td>MONTERO</td><td>FM-53</td></tr>
+            <tr><td>MARIATEGUI - SH-34</td><td>FM-54</td></tr>
+            <tr><td>AGUIRRE</td><td>FM-55</td></tr>
+            <tr><td>PALACIOS</td><td>FM-56</td></tr>
+            <tr><td>QUIÑONES - AB-212</td><td>CM-21</td></tr>
+            <tr><td>VILLEGAS - AB-212</td><td>CM-22</td></tr>
+            <tr><td>DEL SOLAR</td><td>CM-23</td></tr>
+        </table>
+
+        <table>
+            <tr><th colspan="2">Escuadra Chile</th></tr>
+            <tr><td>ALMIRANTE COCHRANE - SH-23</td><td>FF-05</td></tr>
+            <tr><td>ALMIRANTE LYNCH</td><td>FF-06</td></tr>
+            <tr><td>ALMIRANTE CONDELL</td><td>FF-07</td></tr>
+            <tr><td>ALMIRANTE BLANCO</td><td>FF-14</td></tr>
+            <tr><td>ALMIRANTE LATORRE</td><td>FF-15</td></tr>
+            <tr><td>ALMIRANTE WILLIAMS - SH-32</td><td>LM-31</td></tr>
+            <tr><td>LM-32</td><td></td></tr>
+            <tr><td>LM-33</td><td></td></tr>
+            <tr><td>LM-34</td><td></td></tr>
+            <tr><td>LM-35</td><td></td></tr>
+        </table>
+    </div>
+
+    <div class="input-container">
+        <label>PCR ASIMÉTRICO Perú: <input type="number" id="pcrPeru" value="1.0" step="0.1"></label>
+        <label>PCR ASIMÉTRICO País Seleccionado: <input type="number" id="pcrChile" value="3.3" step="0.1"></label>
+        <button onclick="actualizarGrafico()">Actualizar</button>
+    </div>
+
+    <div class="chart-container">
+        <h2>PCR ASIMÉTRICO</h2>
+        <div class="bar-chart">
+            <div id="barPeru" class="bar peru" style="height: 25%;">1.0</div>
+            <div id="barChile" class="bar chile" style="height: 75%;">3.3</div>
+        </div>
+    </div>
+
+    <script>
+        function actualizarGrafico() {
+            let pcrPeru = parseFloat(document.getElementById("pcrPeru").value);
+            let pcrChile = parseFloat(document.getElementById("pcrChile").value);
+            
+            let max = Math.max(pcrPeru, pcrChile, 4);
+            document.getElementById("barPeru").style.height = (pcrPeru / max * 100) + "%";
+            document.getElementById("barChile").style.height = (pcrChile / max * 100) + "%";
+            document.getElementById("barPeru").textContent = pcrPeru;
+            document.getElementById("barChile").textContent = pcrChile;
+        }
+    </script>
+</body>
+</html>

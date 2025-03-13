@@ -131,10 +131,17 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (opcion === "fuerzaNaval") {
                 operacionalSection.style.display = "none";
                 fuerzaNavalSection.style.display = "block";
-            } else {
-                alert(`Seleccionaste: ${opcion}`); // Aquí irá la función que manejará la selección
+            } else if (opcion === "fuerzaMilitar") {
+                operacionalSection.style.display = "none";
+                fuerzaMilitarSection.style.display = "block";
             }
         });
+    });
+
+    // Add volver button handler for military force section
+    document.getElementById("volverOperacionalMilitar").addEventListener("click", function() {
+        document.getElementById("fuerzaMilitarSection").style.display = "none";
+        document.getElementById("operacionalSection").style.display = "block";
     });
 
     // Calcular totales para Fuerza Aérea
@@ -1268,4 +1275,68 @@ document.querySelectorAll(".tabla-opciones tbody tr").forEach(fila => {
         calcularResultadoTotal();
     });
 });
+
+// Military Force Timeline Navigation
+document.addEventListener('DOMContentLoaded', function() {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const tables = document.querySelectorAll('[id^="table"]');
+    
+    timelineItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const tableNumber = this.dataset.table;
+            
+            // Update active state
+            timelineItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Show selected table, hide others
+            tables.forEach(table => {
+                table.style.display = 'none';
+            });
+            document.getElementById(`table${tableNumber}`).style.display = 'table';
+        });
+    });
+});
+
+// Military Force Timeline Navigation
+document.addEventListener('DOMContentLoaded', function() {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    timelineItems.forEach(item => {
+        item.addEventListener('click', function() {
+            timelineItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+            // Add logic to show corresponding table
+        });
+    });
+
+    // Calculate military factors
+    const militaryInputs = document.querySelectorAll('.valor-asignado, .azul-input, .verde-input');
+    militaryInputs.forEach(input => {
+        input.addEventListener('change', calculateMilitaryFactors);
+    });
+});
+
+function calculateMilitaryFactors() {
+    // Add calculation logic here
+}
+
+function mostrarPoderCombatienteRelativo() {
+    document.getElementById('modalPCR').style.display = 'block';
+}
+
+function cerrarModalPCR() {
+    document.getElementById('modalPCR').style.display = 'none';
+}
+
+function actualizarGrafico() {
+    let pcrPeru = parseFloat(document.getElementById("pcrPeru").value);
+    let pcrPaisSeleccionado = parseFloat(document.getElementById("pcrPaisSeleccionado").value);
+    
+    let max = Math.max(pcrPeru, pcrPaisSeleccionado, 4);
+    document.getElementById("barPeru").style.height = (pcrPeru / max * 100) + "%";
+    document.getElementById("barPaisSeleccionado").style.height = (pcrPaisSeleccionado / max * 100) + "%";
+    document.getElementById("barPeru").textContent = pcrPeru;
+    document.getElementById("barPaisSeleccionado").textContent = pcrPaisSeleccionado;
+}
 
